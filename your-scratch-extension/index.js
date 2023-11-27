@@ -25,6 +25,18 @@ class Scratch3YourExtension {
           // your Scratch blocks
           blocks: [
               {
+                    opcode: 'command1',
+                    blockType: BlockType.COMMAND,
+                    text: 'command [TEXT]',
+                    arguments: {
+                        TEXT: {
+                            type: ArgumentType.STRING,
+                            defaultValue: "hello",
+                            menu: "languages"
+                        }
+                    }
+                },
+              {
                 // function where your code logic lives
                 opcode: 'kodebeta',
         
@@ -60,6 +72,10 @@ class Scratch3YourExtension {
       
       return (kodebeta);
   }
+
+    command1(args) {
+        this.text = Cast.toString(args.TEXT);
+    }
 
 
 }
